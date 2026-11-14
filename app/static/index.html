@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QR Code Encoder</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main>
+    <h1>QR Code Encoder</h1>
+    <!-- Filled from WELCOME_MESSAGE in deploy/qrencoder.env; stays hidden if not set. -->
+    <p id="welcome" class="welcome" hidden></p>
+    <br>
+
+    <label for="text">Enter string to translate QR code</label>
+    <textarea id="text" rows="5" spellcheck="false" autofocus
+              placeholder="Type text here. Multiple lines are supported."></textarea>
+    <div class="meta">
+      <span id="bytes">0 bytes</span>
+      <span id="qrinfo"></span>
+    </div>
+
+    <div id="error" class="error" role="alert" hidden></div>
+    <br>
+
+    <label for="text">Generated QR code</label>
+    <section id="result" class="result" aria-live="polite">
+      <p class="placeholder">QR code will appear here.</p>
+    </section>
+
+    <div class="actions">
+      <button id="download" type="button" disabled>Download SVG</button>
+    </div>
+
+    <footer id="settings"></footer>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
